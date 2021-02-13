@@ -280,10 +280,10 @@ public class ItemBehaviour : MonoBehaviour
         {
             Marker.transform.position += player.transform.forward.normalized * Input.GetAxis("Mouse ScrollWheel") * 10;
         }
-        //Ansonsten wird es ein Stück vor dem Spieler zurückgesetzt
+        //Ansonsten wird es zum Spieler zurückgesetzt
         else
         {
-            Marker.transform.position = player.transform.position;
+            Marker.transform.position = player.transform.position - new Vector3(0, 0.8f, 0);
         }
     }
 

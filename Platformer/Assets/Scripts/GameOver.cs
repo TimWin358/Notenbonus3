@@ -7,11 +7,15 @@ public class GameOver : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        ScoringSystem.liveScore--;
 
-        if(ScoringSystem.liveScore == 0)
+        if (other.tag.Equals("Player"))
         {
-            SceneManager.LoadScene(4);
+            ScoringSystem.liveScore--;
+
+            if (ScoringSystem.liveScore == 0)
+            {
+                SceneManager.LoadScene(4);
+            }
         }
 
     }
