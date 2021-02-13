@@ -12,6 +12,7 @@ public class CollectCollectable : MonoBehaviour
         {
             collectSound.Play();
             ScoringSystem.theScore += 50;
+            PlayerPrefs.SetInt("Score", ScoringSystem.theScore);
             Destroy(gameObject);
         }
 

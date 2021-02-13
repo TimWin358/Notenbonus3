@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerBehaviour : MonoBehaviour
@@ -28,14 +29,10 @@ public class PlayerBehaviour : MonoBehaviour
         playerCol = gameObject.GetComponent<Collider>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         GetInput();
+        Esc();
     }
 
     private void FixedUpdate()
@@ -105,6 +102,16 @@ public class PlayerBehaviour : MonoBehaviour
     void OnDeath()
     {
         Spawn();
+    }
+
+    void Esc()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
