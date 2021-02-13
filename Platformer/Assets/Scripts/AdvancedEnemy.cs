@@ -70,7 +70,8 @@ public class AdvancedEnemy : MonoBehaviour
                     ChaseLineOfSight(Prey.transform.position, ChaseSpeed); 
                 } 
                 else { 
-                    PatternMovement(); 
+                    //Mach nix
+                    //PatternMovement(); 
                 }
                 break;
         }
