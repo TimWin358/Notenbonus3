@@ -8,8 +8,12 @@ public class CollectCollectable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        collectSound.Play();
-        ScoringSystem.theScore += 50;
-        Destroy(gameObject);
+        if (other.tag.Equals("Player"))
+        {
+            collectSound.Play();
+            ScoringSystem.theScore += 50;
+            Destroy(gameObject);
+        }
+
     }
 }
