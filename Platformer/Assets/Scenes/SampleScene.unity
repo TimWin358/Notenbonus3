@@ -37866,7 +37866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jump: 0
   Dash: 0
-  Teleport: 1
+  Teleport: 0
   Gleiten: 0
   Jump_Height: 10
   Dash_Distance: 100
