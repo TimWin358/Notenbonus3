@@ -17,16 +17,31 @@ public class ShopManager : MonoBehaviour
         KontostandAktualisieren();
     }
 
-    public void ItemKauf(int itemPreis, string item)
+    public void ItemKauf(int itemPreis)
     {
         // Kontostand überprüfen
         if(kontostand >= itemPreis)
         {
-            // Kontostand aktualisieren
-            kontostand = kontostand - itemPreis;
+            switch (itemPreis)
+            {
+                case 20:
+                    // Item in ItemBehaviour auf True setzen
+                    PlayerPrefs.SetInt("Jump", 1);
+                    break;
+                case 30:
+                    PlayerPrefs.SetInt("Dash", 1);
+                    break;
+                case 50:
+                    PlayerPrefs.SetInt("Gleiten", 1);
+                    break;
+                case 100:
+                    PlayerPrefs.SetInt("Teleport", 1);
+                    break;
+            }
 
-            // Item in ItemBehaviour auf True setzen
-            //currentItem.item = true;
+            // Kontostand aktualisieren
+            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") - itemPreis);
+            kontostand = kontostand - itemPreis;
 
             // Kontostand Textfeld aktualisieren
             KontostandAktualisieren();
@@ -35,6 +50,8 @@ public class ShopManager : MonoBehaviour
 
     void KontostandAktualisieren()
     {
+        kontostand = PlayerPrefs.GetInt("Score", 0);
+
         // Kontostand in Textfeld eintragen
         kontostandText.text = kontostand.ToString();
     }

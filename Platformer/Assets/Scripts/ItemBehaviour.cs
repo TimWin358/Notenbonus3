@@ -11,10 +11,10 @@ public class ItemBehaviour : MonoBehaviour
 
     [Header("Items")]
 
-    public bool Jump;
-    public bool Dash;
-    public bool Teleport;
-    public bool Gleiten;
+    public int Jump;
+    public int Dash;
+    public int Teleport;
+    public int Gleiten;
 
     //Man könnte es auch "public bool Jump, Dash, Teleport, Gleiten;" schreiben aber dann sieht es nichtmehr so schön im Editor aus :(
 
@@ -75,6 +75,12 @@ public class ItemBehaviour : MonoBehaviour
     //FIX (falls nötig): FindWithTag(<AndererTagHier>), GetComponent<<AndererScriptNameHier>>
     private void Start()
     {
+        //Schaut welche Items benutzt werden können
+        Jump = PlayerPrefs.GetInt("Jump", 0);
+        Dash = PlayerPrefs.GetInt("Dash", 0);
+        Teleport = PlayerPrefs.GetInt("Teleport", 0);
+        Gleiten = PlayerPrefs.GetInt("Gleiten", 0);
+
         //Setzt Player Variablen
         player = GameObject.FindWithTag("Player");
         playerRigidbody = player.GetComponent<Rigidbody>();
@@ -124,7 +130,7 @@ public class ItemBehaviour : MonoBehaviour
         //1. Hat man springen freigeschaltet?
         //2. Ist man in der Luft?
         //3. Kann man noch springen?
-        if (Jump && !playerScript.Grounded() && canJump)
+        if (Jump == 1 && !playerScript.Grounded() && canJump)
         {
             canJump = false;
 
@@ -138,7 +144,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         //1. Hat man dashen freigeschaltet?
         //2. Kann man noch dashen?
-        if (Dash && canDash)
+        if (Dash == 1 && canDash)
         {
             canDash = false;
 
@@ -183,7 +189,7 @@ public class ItemBehaviour : MonoBehaviour
             //1. Hat man telepotieren freigeschaltet?
             //2. Befindet man sich auf dem Boden?
             //3. Kann man noch teleportieren?
-            if (Teleport && playerScript.Grounded() && canTeleport)
+            if (Teleport == 1 && playerScript.Grounded() && canTeleport)
             {
 
                 canTeleport = false;
@@ -222,7 +228,7 @@ public class ItemBehaviour : MonoBehaviour
 
         //1. Hat man gleiten freigeschaltet?
         //2. Kann man noch gleiten?
-        if (Gleiten && canGleiten)
+        if (Gleiten == 1 && canGleiten)
         {
             canGleiten = false;
 
