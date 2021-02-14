@@ -154,18 +154,6 @@ public class PlayerBehaviour : MonoBehaviour
             currCheckpoint++;
             other.GetComponent<Collider>().enabled = false;
         }
-        else if(other.tag == "Moveable")
-        {
-            transform.parent = other.transform;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Moveable")
-        {
-            transform.parent = null;
-        }
     }
 
 }
