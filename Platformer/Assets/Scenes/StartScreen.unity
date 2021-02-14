@@ -2863,7 +2863,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1989344973}
         m_TargetAssemblyTypeName: ShopSelector, Assembly-CSharp
-        m_MethodName: ShowShopPanel
+        m_MethodName: ShowMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -20,4 +20,10 @@ public class ShopSelector : MonoBehaviour
         shopPanel.SetActive(true);
         mainMenuPanel.SetActive(false);
     }
+
+    public void ShowMainMenu()
+    {
+        shopPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+    }
 }
