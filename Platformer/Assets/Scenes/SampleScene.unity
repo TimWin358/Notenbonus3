@@ -37871,7 +37871,7 @@ MonoBehaviour:
   Jump_Height: 10
   Dash_Distance: 10
   Teleport_Distance: 5
-  Gleiten_Time: 10
+  Gleiten_Time: 3
   JumpGleitDelay: 1
   Marker: {fileID: 1116488342}
 --- !u!1 &1617084166
