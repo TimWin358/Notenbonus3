@@ -28,9 +28,4 @@ public class ShopSelector : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ShowMainMenu()
-    {
-        shopPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
-    }
 }
