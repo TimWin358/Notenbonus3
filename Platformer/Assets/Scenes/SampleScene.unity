@@ -37869,7 +37869,7 @@ MonoBehaviour:
   Teleport: 1
   Gleiten: 0
   Jump_Height: 10
-  Dash_Distance: 10
+  Dash_Distance: 100
   Teleport_Distance: 5
   Gleiten_Time: 10
   JumpGleitDelay: 1
