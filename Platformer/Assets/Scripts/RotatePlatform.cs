@@ -51,4 +51,27 @@ public class RotatePlatform : MonoBehaviour
         }
         
     }
+
+
+    //Dieser Teil bewegt den Player mit der Platform mit
+    //(Leider um eine Frame Verzögerung aber besser als nichts ;) )
+    private Vector3 lastFrame;
+    private Vector3 currentFrame;
+
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (other.tag.Equals("Player"))
+        {
+            currentFrame = transform.position;
+
+            if (lastFrame != Vector3.zero)
+            {
+                other.transform.position += currentFrame - lastFrame;
+            }
+
+            lastFrame = transform.position;
+        }
+
+    }
 }

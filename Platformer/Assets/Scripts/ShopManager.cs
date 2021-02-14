@@ -8,7 +8,7 @@ public class ShopManager : MonoBehaviour
 
     public int kontostand;
     public Text kontostandText;
-    public ItemBehaviour currentItem;
+    // public ItemBehaviour currentItem;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class ShopManager : MonoBehaviour
             kontostand = kontostand - itemPreis;
 
             // Item in ItemBehaviour auf True setzen
-            currentItem.item = true;
+            //currentItem.item = true;
 
             // Kontostand Textfeld aktualisieren
             KontostandAktualisieren();
